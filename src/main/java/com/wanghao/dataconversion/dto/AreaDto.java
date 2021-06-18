@@ -1,37 +1,15 @@
-package com.wanghao.dataconversion.entity;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.wanghao.dataconversion.dto;
 
 /**
  * @author wanghao
- * @date 2021-06-17
  */
-
-@Entity
-@Table(name = "international_data_score")
-public class InternationalDataScore {
-
-    /**
-     * 序号
-     */
-    private String serial_number;
+public class AreaDto {
 
     /**
      * 区域
      */
     private String area;
 
-    /**
-     * 国家
-     */
-    private String country;
-
-    /**
-     * 国家代码
-     */
-    private String country_code;
 
     /**
      * year
@@ -68,14 +46,11 @@ public class InternationalDataScore {
      */
     private String eri;
 
-    public InternationalDataScore() {
+    public AreaDto() {
     }
 
-    public InternationalDataScore(String serial_number, String area, String country, String country_code, String year, String rd_tech, String SCI_eco, String tech_ni, String SCI_rd, String SCI_ecr, String eri) {
-        this.serial_number = serial_number;
+    public AreaDto(String area, String year, String rd_tech, String SCI_eco, String tech_ni, String SCI_rd, String SCI_ecr, String eri) {
         this.area = area;
-        this.country = country;
-        this.country_code = country_code;
         this.year = year;
         this.rd_tech = rd_tech;
         this.SCI_eco = SCI_eco;
@@ -85,14 +60,6 @@ public class InternationalDataScore {
         this.eri = eri;
     }
 
-    @Id
-    public String getSerial_number() {
-        return serial_number;
-    }
-
-    public void setSerial_number(String serial_number) {
-        this.serial_number = serial_number;
-    }
 
     public String getArea() {
         return area;
@@ -100,22 +67,6 @@ public class InternationalDataScore {
 
     public void setArea(String area) {
         this.area = area;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCountry_code() {
-        return country_code;
-    }
-
-    public void setCountry_code(String country_code) {
-        this.country_code = country_code;
     }
 
     public String getYear() {
@@ -176,11 +127,8 @@ public class InternationalDataScore {
 
     @Override
     public String toString() {
-        return "InternationalDataScore{" +
-                "serial_number='" + serial_number + '\'' +
-                ", area='" + area + '\'' +
-                ", country='" + country + '\'' +
-                ", country_code='" + country_code + '\'' +
+        return "AreaDto{" +
+                "area='" + area + '\'' +
                 ", year='" + year + '\'' +
                 ", rd_tech='" + rd_tech + '\'' +
                 ", SCI_eco='" + SCI_eco + '\'' +
